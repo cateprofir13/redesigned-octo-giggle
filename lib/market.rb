@@ -20,6 +20,7 @@ class Market
     @vendors.find_all do |vendor|
       vendor.inventory.key?(item)
     end
-    
   end
+
+  
 end
