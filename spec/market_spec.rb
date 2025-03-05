@@ -61,5 +61,29 @@ RSpec.describe Market do
       expect(@market.vendors_that_sell(@item3)).to eq([@vendor2])
     end
   end
-  
+
+  describe '#total_invebtory' do
+    it 'returns the quataty of all items at the market' do
+
+      @vendor1.stock(@item1, 35)
+      @vendor1.stock(@item2, 7)
+      @vendor2.stock(@item4, 50)
+      @vendor2.stock(@item3, 25)
+      @vendor3.stock(@item1, 65)
+
+      @market.add_vendor(@vendor1)
+      @market.add_vendor(@vendor2)
+      @market.add_vendor(@vendor3)
+
+      expected = {
+        @item1 => { quantity: 100, vendors: [@vendor1, @vendor3] },
+        @item2 => { quantity: 7, vendors: [@vendor1] },
+        @item3 => { quantity: 25, vendors: [@vendor2] },
+        @item4 => { quantity: 50, vendors: [@vendor2] }
+      }
+
+      expect(@market.total_inventory).to eq(expected)
+    end
+  end
+   
 end
