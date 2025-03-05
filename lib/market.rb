@@ -22,5 +22,22 @@ class Market
     end
   end
 
-  
+  def total_inventory
+    hash = {}
+    keys = []
+    @vendors.each do |vendor|
+      vendor.inventory.each_key do |item|
+        keys << item
+         #binding.pry
+      end
+    end
+   
+    values = keys.map do |item|
+      quantity = 0
+      vendors = []
+
+    end
+    
+
+  end
 end
