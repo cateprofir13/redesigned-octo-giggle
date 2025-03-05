@@ -28,7 +28,7 @@ RSpec.describe Vendor do
     it 'adds to the stock' do
       @vendor.stock(@item1, 30)
 
-      expect(@vendor.inventory).to eq ({@item1 => 30})
+      expect(@vendor.inventory).to eq({@item1 => 30})
       expect(@vendor.check_stock(@item1)).to eq(30)
 
       @vendor.stock(@item1, 25)
@@ -41,4 +41,17 @@ RSpec.describe Vendor do
 
     end
   end
+
+  describe '#potential_revenue' do
+  it 'calculates potential revenue' do
+    vendor1 = Vendor.new("Rocky Mountain Fresh")
+    item1 = Item.new({name: 'Peach', price: "$0.75"})
+    item2 = Item.new({name: 'Tomato', price: "$0.50"})
+
+    vendor1.stock(item1, 35)
+    vendor1.stock(item2, 7)
+
+    expect(vendor1.potential_revenue).to eq(29.75)
+  end
+end
 end
