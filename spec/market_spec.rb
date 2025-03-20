@@ -85,5 +85,37 @@ RSpec.describe Market do
       expect(@market.total_inventory).to eq(expected)
     end
   end
-   
 end
+  #  describe '#overstocked_items' do
+  #   it 'returns an array of onjects' do
+  #     @vendor1.stock(@item1, 35)
+  #     @vendor1.stock(@item2, 7)
+  #     @vendor2.stock(@item4, 50)
+  #     @vendor2.stock(@item3, 25)
+  #     @vendor3.stock(@item1, 65)
+
+  #     @market.add_vendor(@vendor1)
+  #     @market.add_vendor(@vendor2)
+  #     @market.add_vendor(@vendor3)
+
+  #     expect(@market.overstocked_items).to eq([@item1])
+
+  #   end
+  #  end
+
+  #  describe '#sorted_item_lists' do
+  #   it 'returns an array of names' do
+  #     @vendor1.stock(@item1, 35)
+  #     @vendor1.stock(@item2, 7)
+  #     @vendor2.stock(@item4, 50)
+  #     @vendor2.stock(@item3, 25)
+  #     @vendor3.stock(@item1, 65)
+
+  #     @market.add_vendor(@vendor1)
+  #     @market.add_vendor(@vendor2)
+  #     @market.add_vendor(@vendor3)
+
+  #     expect(@market.sorted_item_list).to eq(["Banana Nice Cream", 'Peach',"Peach-Raspberry Nice Cream", 'Tomato' ])
+
+  #  end
+  # end

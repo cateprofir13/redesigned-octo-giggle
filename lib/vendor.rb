@@ -6,7 +6,7 @@ class Vendor
   end
   
   def check_stock(item)
-    if @inventory[item] != nil
+    if @inventory[item] #if truthy
       return @inventory[item]  
     else
       return 0  
